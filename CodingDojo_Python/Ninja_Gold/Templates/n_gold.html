@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ninja Money</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='n_gold.css') }}">
+	</head>
+	<body>
+		<div id="wrapper">
+			<p><span>Your Gold:</span></p>
+			<form id="gold_total"><input type="text" name="total_gold" value="{{session['gold']}}"></form>
+			<fieldset>
+				<h3>Farm</h3>
+				<p class="coins">(earns 10-20 gold)</p>
+				<form action="/process_money" method="post">
+				  <input type="hidden" name="location" value="farm" />
+				  <input type="submit" value="Find Gold!"/>
+				</form> 
+			</fieldset>
+			<fieldset>
+				<h3>Cave</h3>
+				<p class="coins">(earns 5-10 gold)</p>
+				<form action="/process_money" method="post">
+				  <input type="hidden" name="location" value="cave" />
+				  <input type="submit" value="Find Gold!"/>
+				</form> 
+			</fieldset>
+			<fieldset>
+				<h3>House</h3>
+				<p class="coins">(earns 2-5 gold)</p>
+				<form action="/process_money" method="post">
+				  <input type="hidden" name="location" value="house" />
+				  <input type="submit" value="Find Gold!"/>
+				</form> 
+			</fieldset>
+			<fieldset>
+				<h3>Casino</h3>
+				<p class="coins">(earns/takes 0-50 gold)</p>
+				<form action="/process_money" method="post">
+				  <input type="hidden" name="location" value="casino" />
+				  <input type="submit" value="Find Gold!"/>
+				</form> 
+			</fieldset>
+			<p id="activities">Activities:</p>
+			<div id="message_feed">
+				{% for message in session['messages'] %}
+					<p id= '{{message["color"]}}'>{{message['content']}}</p>
+				{% endfor %}
+			</div> -->
+		</div>
+	</body>
+</html>

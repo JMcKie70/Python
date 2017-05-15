@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+		<title>Email Validation</title>
+	</head>
+	<body>
+		<div>
+			{%if messages%}
+				{%for message in messages%}
+					<div class= "{{message.tags}}">
+						<p>{{message}}</p>
+					</div>
+				{%endfor%}
+			{%endif%}
+			<form action = "/process" method = "POST">{% csrf_token %}
+				<input type="email" name="email">
+				<input type="submit" name="button" value="Submit">
+			</form>
+		</div>
+	</body>
+</html>

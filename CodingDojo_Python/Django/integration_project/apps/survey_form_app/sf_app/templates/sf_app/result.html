@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Survey Form/result</title>
+		<style type="text/css">
+			#button{
+				background-color: blue;
+				color: white;
+				border: 2px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<h3>Thanks for submitting this form!  You have submitted this form {{request.session.num_submits}} times now.</h3>
+		</div>
+		<div id="bottom">
+			<h2>Submitted Information</h2>
+			<p>Name: <span>{{request.session.name}}</span></p>
+			<p>Dojo Location: <span>{{request.session.location}}</span></p>
+			<p>Favorite Language: <span>{{request.session.language}}</span></p>
+			<p>Comment: <span>{{request.session.comment}}</span></p>
+			<form action='/go_back' method="POST">
+				<input id="button" type="submit" value="Go Back">
+				{% csrf_token %}
+			</form>
+		</div>
+	</body>
+</html>

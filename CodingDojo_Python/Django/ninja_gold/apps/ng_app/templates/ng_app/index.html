@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ninja Gold</title>
+		<style type="text/css">
+			*{
+				margin:0px auto;
+				padding:0px auto;
+			}
+			p{
+				width:100px;
+				height:20px;
+				display:inline-block;
+				margin-left:10px;
+				margin-top:20px;
+			}
+			#gold_total{
+				width:100px;
+				height:40px;
+				margin-left:10px;
+				margin-bottom:10px;
+				display:inline-block;
+			}
+			#middle{
+				width:900px;
+				height:250px;
+			}
+			fieldset{
+				width:160px;
+				height:160px;
+				margin:10px;
+				display: inline-block;
+			}
+			#bottom{
+				width:800px;
+				border: 1px solid black;
+				padding-left:20px;
+				text-align: left;
+			}
+			#green{
+				color:green;
+				width:790px;
+			}
+			#red{
+				color:red;
+				width:790px;
+			}
+		</style>
+	</head>
+	<body>
+	<div>
+		<p>Your Gold:</p>
+		<form id="gold_total">
+			<input type="text" name="total_gold" value="{{request.session.gold_total}}">
+		</form>
+		<div id="middle">
+			<fieldset>
+				<h1>Farm</h1>
+				<p>(earns 10-20 golds)</p>
+				<form action="/process_gold" method="POST">
+					{% csrf_token %}
+    				<input type="hidden" name="farm"/>
+    				<input type="submit" value="Find Gold!"/>
+ 				</form>
+			</fieldset>
+			<fieldset>
+				<h1>Cave</h1>
+				<p>(earns 5-10 golds)</p>
+				<form action="/process_gold" method="POST">
+					{% csrf_token %}
+    				<input type="hidden" name="cave"/>
+    				<input type="submit" value="Find Gold!"/>
+ 				</form>
+			</fieldset>
+			<fieldset>
+				<h1>House</h1>
+				<p>(earns 2-5 golds)</p>
+				<form action="/process_gold" method="POST">
+					{% csrf_token %}
+    				<input type="hidden" name="house"/>
+    				<input type="submit" value="Find Gold!"/>
+ 				</form>
+			</fieldset>
+			<fieldset>
+				<h1>Casino</h1>
+				<p>(earns/takes 0-50 golds)</p>
+				<form action="/process_gold" method="POST">
+					{% csrf_token %}
+    				<input type="hidden" name="casino"/>
+    				<input type="submit" value="Find Gold!"/>
+ 				</form>
+			</fieldset>
+		</div>
+		<div id="bottom">
+			<h3>Activities:</h3>
+				{% for message in request.session.message %}
+					<p id="{{message.color}}"> {{message.new_message}} </p>
+				{% endfor %}
+		</div>
+	</div>
+	</body>
+</html>

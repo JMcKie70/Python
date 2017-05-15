@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+		<title>Login and Registration Success</title>
+		<style type="text/css">
+			h4{
+				color: green;
+			}
+			a{
+				border:1px solid black;
+				background-color: gray;
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h3>Hello, {{user.first_name}} {{user.last_name}} </h3>
+			{%for message in messages%}
+				<!-- <h2>Success! Welcome, {{message}}!</h2> -->
+			<h4>{{message}}</h4>
+			{%endfor%}
+
+			<a href="/logout">Log Out</a>
+		</div>
+	</body>
+</html>

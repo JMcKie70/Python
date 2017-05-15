@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>message</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<h1>NOT FACEBOOK or FAKEBOOK</h1>
+				<h2>{{session['user']['first_name']}} {{session['user']['last_name']}}</h2>
+				<h3>post a message</h3>
+
+				<form id="message_form" action="/message" method="post">
+					<input type="hidden" name="user_id" value="{{session['user']['id']}}">
+					<textarea name="message_text" rows="8" cols="80" placeholder="place your message here"></textarea>
+					<input type="submit" name="" value="submit message">
+				</form>
+
+			{% for message in wall_messages %}
+				<fieldset id='message_content_display'>
+					<p> {{message['username']}}</p>
+					<p>{{message['message']}}</p>
+					<p> {{message['added']}}</p>
+
+
+
+
+					<form id="comment_form" action="/comment" method="post">
+						<input type="hidden" name="user_id" value="{{session['user']['id']}}">
+						<input type="hidden" name="message_id" value="{{message['id']}}">
+						<textarea name="comment_text" rows="3" cols="30" placeholder="place your comment here"></textarea>
+						<input type="submit" name="" value="submit comment">
+					</form>
+
+						{% for comment in message['comments'] %}
+						<!-- was making an array of one ARRAY holding all the comments and comments stuff could also do [comments][0] see line 119 in the server file -->
+							<fieldset id="comment_content_display">
+								<p> {{comment['username']}}</p>
+								<p> {{comment['comment_text']}}</p>
+								<p> {{comment['added']}}</p>
+						  </fieldset>
+						{% endfor %}
+
+				</fieldset>
+			{% endfor %}
+
+
+
+					<form id="logout" action="/logout" method="post">
+						<input type="submit" name="" value="log out">
+					</form>
+		</div>
+	</body>
+</html>

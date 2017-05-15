@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login or Register</title>
+		<style media="screen">
+			.error{
+				color:red;
+			}
+		</style>	
+	</head>
+	<body>
+		<div id="wrapper">
+			<h1>Welcome!</h1>
+			<h2>Register</h2>
+			<form action="/register" method="POST">
+			{% csrf_token %}
+				<p>Name: <input type="text" name="name" value=""></p>
+				<p>Username: <input type="text" name="user_name" value=""></p>
+				<p>Password: <input type="Password" name="password" value=""></p>
+				<p>*Password should be at least 8 characters</p>
+				<p>Confirm PW: <input type="Password" name="confirm_pw" value=""></p>
+				<input type="submit" name="button" value="Register">
+			</form>
+			<h2>Login</h2>
+			<form action="/login" method="POST">
+			{% csrf_token %}
+				<p>Username: <input type="text" name="user_name" value=""></p>
+				<p>Password: <input type="password" name="password" value=""></p>
+				<input type="submit" name="button" value="Login">
+			</form>
+			{% if messages %}
+				{% for message in messages %}
+					<p class="{{message.tags}}">{{message}}</p>
+				{% endfor %}
+			{% endif %}
+		</div>
+	</body>
+</html>

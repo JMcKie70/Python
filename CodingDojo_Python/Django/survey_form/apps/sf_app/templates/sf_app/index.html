@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Survey Form</title>
+		<style type="text/css">
+			#button{
+				background-color: blue;
+				color: white;
+				border: 2px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<fieldset>
+			<form action='/sf_info' method= "POST">
+				{% csrf_token %}
+				Your Name:
+				<input type="text" name="name">
+				Dojo Location:
+				<select name= "location">
+				  <option value="burbank">Burbank</option>
+				  <option value="san jose">San Jose</option>
+				  <option value="seattle">Seattle</option>
+				</select>
+				Favorite Language:
+				<select name= "language">
+				  <option value="python">Python</option>
+				  <option value="javascript">JavaScript</option>
+				  <option value="ruby">Ruby</option>
+				</select>
+				Comment (optional):
+				<textarea name="comment"></textarea>
+				<input id="button" type="submit" name="button" value="Submit"/>
+			</form>
+		</fieldset>
+	</body>
+</html>

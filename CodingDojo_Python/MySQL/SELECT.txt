@@ -1,0 +1,18 @@
+SELECT *
+FROM users
+
+SELECT first_name
+FROM users
+
+SELECT first_name, last_name
+FROM users AS full_nam
+
+SELECT *
+FROM users
+WHERE last_name LIKE "M%"
+ORDER BY birthday DESC
+
+SELECT CONCAT(first_name, ' ', last_name)
+AS full_name
+FROM users
+

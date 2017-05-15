@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Disappearing Ninjas</title>
+		<style type="text/css">
+			*{
+				margin:0px auto;
+				padding:0px auto;
+			}
+			img{
+				width:400px;
+				height:400px;
+				display:{{ninjas_property}};
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1>{{phrase}}</h1>
+			<img src="{{url_for('static', filename='tmnt.png')}}" alt="Four Mutant Ninja Graphic">
+		</div>
+	</body>
+</html>

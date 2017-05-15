@@ -1,0 +1,42 @@
+1.  In myEnvironments folder “source djangoEnv/bin/activate” to start virtual environment.
+
+2.  In Django folder “django-admin startproject <PROJECT NAME>” to start a new project.
+
+3.   “mkdir apps” in <PROJECT NAME>  folder to make a new “apps” directory.
+
+4.  “touch __init__.py” in new “apps” directory to make a new file.
+
+5.  “python ../manage.py startapp <APP NAME>” from new “apps” directory to start new app. 
+
+6.  “cd ../<PROJECT NAME>”
+
+7.  “open settings.py” to add ‘apps.<APP NAME>’ to INSTALLED_APPS = [….]
+
+8.  “open urls.py”  in <PROJECT NAME> folder to import “include” after url and change it to 
+     “url(r’^’, include (‘apps.<APP NAME>.urls’))”
+
+9.  “cd ../apps/<APP NAME>” and “touch urls.py”.
+
+10. “open urls.py” in <APP NAME> to add “from django.conf.urls import url” and 
+      “from . import views” and “urlpatterns = [url(r’^$’, views.index)]” and (others?).
+
+11. “open views.py” in <APP NAME> to add “from django.shortcuts import render, 
+      HttpResponse, redirect” (and any others) and “def index(request): return 
+      render(request, ‘<APP NAME>/index.html’) and “from .models import” (class names 
+      from models.py dBs).
+
+12. “mkdir templates” in apps/<APP NAME>.
+
+13. “mkdir <APP NAME>” in templates folder.
+
+14. “touch index.html” in that <APP NAME> folder.
+
+15. “open models.py” to add “from django.db import models” and any classes.
+
+>”python manage.py runserver”  to run project on localhost:8000.
+
+>”python manage.py makemigrations” to implement sessions in our app.
+
+>”python manage.py migrate” and when dealing with databases/classes.
+                                      (never delete migration files)
+

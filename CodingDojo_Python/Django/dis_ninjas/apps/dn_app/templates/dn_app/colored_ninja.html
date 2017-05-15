@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Colored Ninjas</title>
+		<style type="text/css">
+			#colored_ninjas{
+				margin:0px auto;
+				padding:0px auto;
+				width:300px;
+				height:300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="colored_ninjas">
+			{% load static %}
+			{% if color == "blue" %}
+				<img src="{% static "dn_app/images/leonardo.jpg" %}" alt="Leonardo"/>
+			{% elif color == "orange" %}
+				<img src="{% static "dn_app/images/michelangelo.jpg" %}" alt="Michelagelo"/>
+			{% elif color == "red" %}
+				<img src="{% static "dn_app/images/raphael.jpg" %}" alt="Raphael"/>
+			{% elif color == "purple" %}
+				<img src="{% static "dn_app/images/donatello.jpg" %}" alt="Donatello"/>
+			{% else %}
+				<img src="{% static "dn_app/images/notapril.jpg" %}" alt="Megan Fox"/>
+			{% endif %}
+		</div>
+	</body>
+</html>
+if 

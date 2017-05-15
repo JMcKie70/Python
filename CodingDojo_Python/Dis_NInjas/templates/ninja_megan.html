@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Leonardo Blue</title>
+		<style type="text/css">
+			img{
+				margin:0px auto;
+				padding:0px auto;
+				width:400px;
+				height:400px;
+			}
+			#blue{
+				display:{{blue_property}};
+			}
+			#orange{
+				display:{{orange_property}};
+			}
+			#red{
+				display:{{red_property}};
+			}
+			#purple{
+				display:{{purple_property}};
+			}
+			#hack{
+				display:{{hack_property}};
+			}
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<img id="blue" src="{{url_for('static', filename='leonardo.jpg')}}" alt="Leonardo Graphic">
+		</div>
+		<div>
+			<img id="orange" src="{{url_for('static', filename='michelangelo.jpg')}}" alt="Michelangelo Graphic">
+		</div>
+		<div>
+			<img id="red" src="{{url_for('static', filename='raphael.jpg')}}" alt="Raphael Graphic">
+		</div>
+		<div>
+			<img id="purple" src="{{url_for('static', filename='donatello.jpg')}}" alt="Donatello Graphic">
+		</div>
+		<div>
+			<img id="hack" src="{{url_for('static', filename='notapril.jpg')}}" alt="Megan Fox Image">
+		</div>
+	</body>
+</html>

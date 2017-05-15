@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jimbo and Kelly's Restful Route in Jango</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+	<table>
+              <tr>
+                <th>Name</th>
+                <th>Description</th> 
+                <th>Price</th>
+                <th>Created At</th>
+                <th>Actions</th>
+              </tr>
+              {% for stuff in everything %}
+              <tr>
+                <td>{{stuff.name}}</td>
+                <td>...{{stuff.description}}</td>
+                <td>{{stuff.price}}</td> 
+                <td>...{{stuff.created_at}}</td>
+                <td><a href="products/show/{{stuff.id}}">Show</a></td>
+                <td><a href="products/edit/{{stuff.id}}">Edit</a></td>
+                <td><a href="products/destroy/{{stuff.id}}">delete</a></td>
+              </tr>
+              {% endfor %}
+            </table>
+	<a href="/products/new">Add a new product</a>
+				
+			
+
+	</body>
+</html>
+

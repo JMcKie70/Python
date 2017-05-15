@@ -1,0 +1,46 @@
+*{
+				margin:0px auto;
+				padding:0px auto;
+			}
+			p{
+				width:100px;
+				height:20px;
+				display:inline-block;
+				margin-left:10px;
+				margin-top:10px;
+			}
+			#gold_total{
+				width:800px;
+				height:20px;
+				display:inline-block;
+			}
+			fieldset{
+				width:200px;
+				height:200px;
+				display:inline-block;
+				margin:10px;
+				text-align: center;
+			}
+			.coins{
+				width:190px;
+				height:20px;
+			}
+			#activities{
+				margin-left:10px;
+			}
+			#message_feed{
+				width:980px;
+				height:100px;
+				border:1px solid black;
+				margin-right:100px;
+			}
+			#green{
+				color:green;
+				width:900px;
+				height:20px;
+			}
+			#red{
+				color:red;
+				width:900px;
+				height:20px;
+			}

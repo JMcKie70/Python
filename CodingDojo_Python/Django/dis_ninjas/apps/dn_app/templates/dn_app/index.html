@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Disappearing Ninjas</title>
+		<style type="text/css">
+			#four_ninjas{
+				margin:0px auto;
+				padding:0px auto;
+				width:300px;
+				height:300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="four_ninjas">
+			<h1>{{message}}</h1>
+			{% load static %}
+			{% if show == "true" %}
+				<img src="{% static "dn_app/images/tmnt.png" %}" alt="Four Ninjas"/>
+			{% endif %}
+		</div>
+	</body>
+</html>
